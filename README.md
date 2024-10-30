@@ -23,21 +23,30 @@ Open terminal and try execute some kali linux commands
 
 SQL Injection is a sort of infusion assault that makes it conceivable to execute malicious SQL statements. These statements control a database server behind a web application. Assailants can utilize SQL Injection vulnerabilities to sidestep application safety efforts. They can circumvent authentication and authorization of a page or web application and recover the content of the whole SQL database. Identify IP address using ifconfig in Metasploitable2
 
+![image](https://github.com/user-attachments/assets/66081064-845d-4a69-86d6-9a5f559dd3e1)
 
 
 
 Use the above ip address to access the apache webserver of Metasploitable2 from kali linux. In Kali Linux use the ip address in a web browser.
 
+![image](https://github.com/user-attachments/assets/c7c5e1eb-bbcb-4627-93b3-d495d5254565)
 
 
 Select Multidae from the menu listed as shown above. You will get the page as displayed below:
 
+![image](https://github.com/user-attachments/assets/69f6867d-489a-4616-95ee-a3e02cb585df)
 
+Click on the menu Login/Register and register for an account
 
+![image](https://github.com/user-attachments/assets/938c3b9e-68ce-465d-9bb3-8e5d76d7b9f3)
 
+Click on the link “Please register here”
 
+![image](https://github.com/user-attachments/assets/e2047a02-8d15-49d7-ab92-c8455ba353f5)
 
+Click on “Create Account” to display the following page:
 
+![image](https://github.com/user-attachments/assets/4f12bfe1-6261-4362-a6dc-572da1b9d214)
 
 
 
@@ -47,10 +56,13 @@ The login structure we will use in our examples is straightforward. It contains 
 
 ($query = “SELECT * FROM users WHERE username=’$_POST[username]’ AND password=’$_POST[password]’“;). For the username put “ganesh” or “anything” and for the password put (anything’ or ‘1’=’1) or (admin’ or ‘1’=’1) then try to log in, and you’ll be presented with an admin login page.
 
+![image](https://github.com/user-attachments/assets/7ef2670b-8078-4933-a80f-b21b5fec3d6c)
+
 
 
 Click “Login”. The logged in page will show as below:
 
+![image](https://github.com/user-attachments/assets/9b7fdcbe-1cc3-480f-b0fa-bdaed8e8c5cf)
 
 
 
@@ -59,15 +71,17 @@ Click “Login”. The logged in page will show as below:
 
 ##Bypassing login field
 
-The username field is vulnerable. Put (ganesh’ #) or (ganesh’--) in the username field and hit “Enter” to log in. We use “#” or “--” to comment everything in the query sentence that comes after the username filed telling the database to disregard the password field: (SELECT * FROM users WHERE username=’admin’ # AND password=’ ‘). By using line commenting, the aggressor eliminates a part of the login condition and gains access. This technique will make the “WHERE” clause true only for one user; in this case, it is “ganesh.”
+The username field is vulnerable. Put (thaksha’ #) or (thaksha’--) in the username field and hit “Enter” to log in. We use “#” or “--” to comment everything in the query sentence that comes after the username filed telling the database to disregard the password field: (SELECT * FROM users WHERE username=’admin’ # AND password=’ ‘). By using line commenting, the aggressor eliminates a part of the login condition and gains access. This technique will make the “WHERE” clause true only for one user; in this case, it is “thaksha.”
 
-Now after logging out you will see the login page. In the login page give ganesh’ # . You can see the page now enters into the administrator page as before when giving the password.
+Now after logging out you will see the login page. In the login page give thaksha’ # . You can see the page now enters into the administrator page as before when giving the password.
 
+![image](https://github.com/user-attachments/assets/ea4c1433-d991-4d39-a8ba-09fef15d5f77)
 
 
 
 Click the login button and you will see it enter into the administrator page.
 
+![image](https://github.com/user-attachments/assets/31f36e84-a0fa-4fec-a8e9-b0922844f148)
 
 
 ## Union-based SQL Injection
@@ -76,12 +90,17 @@ UNION-based SQL injection assaults enable the analyzer to extract data from the 
 
 After logging out, Now choose the menu as shown below: 
 
+![image](https://github.com/user-attachments/assets/0892e9f9-8e2a-4a0b-b1cc-bd7555817649)
 
+![image](https://github.com/user-attachments/assets/ca511e85-4ad0-42dd-9037-9405a35cf055)
 
+![image](https://github.com/user-attachments/assets/229d084d-a569-4a28-bb88-63b282b425e4)
 
+![image](https://github.com/user-attachments/assets/1cae1b01-5023-4978-b0d2-4728e484241c)
 
+![image](https://github.com/user-attachments/assets/96ebe687-c73a-4a4f-8add-b23c2b1625e9)
 
-
+![image](https://github.com/user-attachments/assets/97ecbf87-0628-464e-939c-eca4676ff337)
 
 
 
