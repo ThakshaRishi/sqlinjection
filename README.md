@@ -23,18 +23,18 @@ Open terminal and try execute some kali linux commands
 
 SQL Injection is a sort of infusion assault that makes it conceivable to execute malicious SQL statements. These statements control a database server behind a web application. Assailants can utilize SQL Injection vulnerabilities to sidestep application safety efforts. They can circumvent authentication and authorization of a page or web application and recover the content of the whole SQL database. Identify IP address using ifconfig in Metasploitable2
 
-![image](https://github.com/user-attachments/assets/66081064-845d-4a69-86d6-9a5f559dd3e1)
+![image](https://github.com/user-attachments/assets/4a9bf83e-cb93-4fef-aa06-655bfde46a22)
 
 
 
 Use the above ip address to access the apache webserver of Metasploitable2 from kali linux. In Kali Linux use the ip address in a web browser.
 
-![image](https://github.com/user-attachments/assets/c7c5e1eb-bbcb-4627-93b3-d495d5254565)
+![image](https://github.com/user-attachments/assets/6eecc965-6414-4bb5-a29f-c9dfe69b96db)
 
 
 Select Multidae from the menu listed as shown above. You will get the page as displayed below:
 
-![image](https://github.com/user-attachments/assets/69f6867d-489a-4616-95ee-a3e02cb585df)
+![image](https://github.com/user-attachments/assets/391ca5c9-1d87-46f1-be5a-7a2dd628604b)
 
 Click on the menu Login/Register and register for an account
 
