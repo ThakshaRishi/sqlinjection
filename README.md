@@ -23,18 +23,18 @@ Open terminal and try execute some kali linux commands
 
 SQL Injection is a sort of infusion assault that makes it conceivable to execute malicious SQL statements. These statements control a database server behind a web application. Assailants can utilize SQL Injection vulnerabilities to sidestep application safety efforts. They can circumvent authentication and authorization of a page or web application and recover the content of the whole SQL database. Identify IP address using ifconfig in Metasploitable2
 
-![image](https://github.com/user-attachments/assets/4a9bf83e-cb93-4fef-aa06-655bfde46a22)
+![image](https://github.com/user-attachments/assets/ad593a4d-0316-43eb-be1b-50d79606f8a9)
 
 
 
 Use the above ip address to access the apache webserver of Metasploitable2 from kali linux. In Kali Linux use the ip address in a web browser.
 
-![image](https://github.com/user-attachments/assets/6eecc965-6414-4bb5-a29f-c9dfe69b96db)
+![image](https://github.com/user-attachments/assets/3c140369-9a1d-4c2d-bf8e-f05fdb56d044)
 
 
 Select Multidae from the menu listed as shown above. You will get the page as displayed below:
 
-![image](https://github.com/user-attachments/assets/391ca5c9-1d87-46f1-be5a-7a2dd628604b)
+![image](https://github.com/user-attachments/assets/d70d46cf-4360-4fa8-8f5a-b023dda05b62)
 
 Click on the menu Login/Register and register for an account
 
@@ -42,11 +42,11 @@ Click on the menu Login/Register and register for an account
 
 Click on the link “Please register here”
 
-![image](https://github.com/user-attachments/assets/e2047a02-8d15-49d7-ab92-c8455ba353f5)
+![image](https://github.com/user-attachments/assets/bd2f194c-9650-46f6-b5d0-d0fcf05fd82d)
 
 Click on “Create Account” to display the following page:
 
-![image](https://github.com/user-attachments/assets/4f12bfe1-6261-4362-a6dc-572da1b9d214)
+![image](https://github.com/user-attachments/assets/3b6e081f-2d68-4463-98d1-553044bc188e)
 
 
 
@@ -56,52 +56,46 @@ The login structure we will use in our examples is straightforward. It contains 
 
 ($query = “SELECT * FROM users WHERE username=’$_POST[username]’ AND password=’$_POST[password]’“;). For the username put “ganesh” or “anything” and for the password put (anything’ or ‘1’=’1) or (admin’ or ‘1’=’1) then try to log in, and you’ll be presented with an admin login page.
 
-![image](https://github.com/user-attachments/assets/7ef2670b-8078-4933-a80f-b21b5fec3d6c)
+![image](https://github.com/user-attachments/assets/b58ab213-bdcc-48bd-bb18-34ac5d36a48e)
 
 
 
 Click “Login”. The logged in page will show as below:
 
-![image](https://github.com/user-attachments/assets/9b7fdcbe-1cc3-480f-b0fa-bdaed8e8c5cf)
+![image](https://github.com/user-attachments/assets/87fc7a79-6efe-4566-883a-cd5622351144)
 
 
 
 
 
 
-##Bypassing login field
+## Bypassing login field
 
 The username field is vulnerable. Put (thaksha’ #) or (thaksha’--) in the username field and hit “Enter” to log in. We use “#” or “--” to comment everything in the query sentence that comes after the username filed telling the database to disregard the password field: (SELECT * FROM users WHERE username=’admin’ # AND password=’ ‘). By using line commenting, the aggressor eliminates a part of the login condition and gains access. This technique will make the “WHERE” clause true only for one user; in this case, it is “thaksha.”
 
 Now after logging out you will see the login page. In the login page give thaksha’ # . You can see the page now enters into the administrator page as before when giving the password.
 
-![image](https://github.com/user-attachments/assets/ea4c1433-d991-4d39-a8ba-09fef15d5f77)
+![image](https://github.com/user-attachments/assets/d861d8e1-2f4f-4a52-9ed6-4593be322621)
 
 
 
 Click the login button and you will see it enter into the administrator page.
 
-![image](https://github.com/user-attachments/assets/31f36e84-a0fa-4fec-a8e9-b0922844f148)
+![image](https://github.com/user-attachments/assets/1c8aba9c-6e41-4ff4-b83a-f814fb57b060)
 
 
 ## Union-based SQL Injection
 
 UNION-based SQL injection assaults enable the analyzer to extract data from the database effectively. Since the “UNION” operator must be utilized if the two inquiries have precisely the same structure, the attacker must craft a “SELECT” statement like the first inquiry. we will be using the “User Info” page from Mutillidae to perform a Union-Based SQL injection attack. Go to “OWASP Top 10/A1 — Injection/SQLi — Extract-Data/User Info”
 
+
 After logging out, Now choose the menu as shown below: 
 
-![image](https://github.com/user-attachments/assets/0892e9f9-8e2a-4a0b-b1cc-bd7555817649)
+![image](https://github.com/user-attachments/assets/1e530a93-bfb1-4167-87af-e3b566c698a0)
 
-![image](https://github.com/user-attachments/assets/ca511e85-4ad0-42dd-9037-9405a35cf055)
+![image](https://github.com/user-attachments/assets/d5efe233-ad6c-4e66-91c0-875120b78586)
 
-![image](https://github.com/user-attachments/assets/229d084d-a569-4a28-bb88-63b282b425e4)
-
-![image](https://github.com/user-attachments/assets/1cae1b01-5023-4978-b0d2-4728e484241c)
-
-![image](https://github.com/user-attachments/assets/96ebe687-c73a-4a4f-8add-b23c2b1625e9)
-
-![image](https://github.com/user-attachments/assets/97ecbf87-0628-464e-939c-eca4676ff337)
-
+![image](https://github.com/user-attachments/assets/aec92214-08bd-490f-8f9b-a3a0f8fc2aa9)
 
 
 From this point, all our attack vectors will be performed in the URL section of the page using the Union-Based technique.There are two different ways to discover how many columns are selected by the original query. The first is to infuse an “ORDER BY” statement indicating a column number. Given the column number specified is higher than the number of columns in the “SELECT” statement, an error will be returned.
