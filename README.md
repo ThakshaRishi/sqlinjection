@@ -33,7 +33,6 @@ Use the above ip address to access the apache webserver of Metasploitable2 from 
 ![image](https://github.com/user-attachments/assets/ad593a4d-0316-43eb-be1b-50d79606f8a9)
 
 
-![image](https://github.com/user-attachments/assets/3c140369-9a1d-4c2d-bf8e-f05fdb56d044)
 
 
 Select Multidae from the menu listed as shown above. You will get the page as displayed below:
@@ -41,7 +40,6 @@ Select Multidae from the menu listed as shown above. You will get the page as di
 
 ![image](https://github.com/user-attachments/assets/3c140369-9a1d-4c2d-bf8e-f05fdb56d044)
 
-![image](https://github.com/user-attachments/assets/d70d46cf-4360-4fa8-8f5a-b023dda05b62)
 
 Click on the menu Login/Register and register for an account
 
